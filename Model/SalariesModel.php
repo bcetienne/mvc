@@ -1,10 +1,18 @@
 <?php
   namespace Model;
+
+  use \Model\Model as Model;
+
   /**
    * SalariesModel
    */
-  class SalariesModel 
+  class SalariesModel extends Model
   {
+      private $table = "salaries";
+      function __construct()
+      {
+          parent::__construct();
+      }
     /**
      * Retrieve one salarie
      * 
@@ -13,11 +21,14 @@
      * @return bool|string $result
      */
     public function getOneSalarie($col, $val) {
-      if (!$col || !$val) {
-        return false;
-      }
-      $result = '';
-      return $result;
+        $request = $this->dbConnect->prepare('SELECT * FROM ' . $this->table . ' WHERE ' . $col .' = :value');
+        $request->execute(['value' => $val]);
+        $result = $request->fetch();
+        if ($result !== null) {
+            return $result;
+        } else {
+            return false;
+        }
     }
 
     /**

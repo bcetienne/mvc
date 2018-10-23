@@ -10,6 +10,6 @@
       'host' => 'localhost',
       'database' => 'mvc',
       'username' => 'root',
-      'password' => 'root'
+      'password' => '0000'
     ]
   ];
