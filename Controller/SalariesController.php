@@ -27,17 +27,14 @@
     public function remove() {
       var_dump('remove salaries');
     }
+    
+    static function salaries()
+    {
+        $salaries = new Salaries();
+        $view = new View();
+
+        $viewHTML = $salaries->getOneSalarie();
 
 
-
-
-      static function salaries()
-      {
-          $salaries = new Salaries();
-          $view = new View();
-
-          $viewHTML = $salaries->getOneSalarie();
-
-
-      }
+    }
   }
