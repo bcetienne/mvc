@@ -428,5 +428,8 @@ ASALocalRun/
 .composer.phar/
 .composer.phar/*
 .composer*
+./composer.phar/
+./composer.phar/*
+./composer*
 
 # End of https://www.gitignore.io/api/phpstorm+all,visualstudio,visualstudiocode
