@@ -424,5 +424,9 @@ ASALocalRun/
 # Local History for Visual Studio
 .localhistory/
 
+# Composer
+.composer.phar/
+.composer.phar/*
+.composer*
 
 # End of https://www.gitignore.io/api/phpstorm+all,visualstudio,visualstudiocode
