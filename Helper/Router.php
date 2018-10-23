@@ -1,7 +1,5 @@
 <?php
-
     namespace  Helper;
-
     require_once ('./vendor/autoload.php');
 
     class Router
@@ -15,6 +13,7 @@
                 return substr($uri, 1);
             }
         }
+        
         public function route() {
             var_dump($this->trimUri($_SERVER['REQUEST_URI']));
         }
