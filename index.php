@@ -1,6 +1,4 @@
 <?php
   require_once('./vendor/autoload.php');
-  use Helper\Router as Router;
-
-  $router = new Router();
-  $router->route();
+  // Call routes
+  require_once('./Config/routes.php');
