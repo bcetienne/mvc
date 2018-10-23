@@ -434,6 +434,6 @@ ASALocalRun/
 /vendor/
 
 # Config file
-Config/app.php
+./Config/app.php
 
 # End of https://www.gitignore.io/api/phpstorm+all,visualstudio,visualstudiocode
