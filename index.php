@@ -1,1 +1,2 @@
-<h1>Yo</h1>
+<?php
+  require_once('./vendor/autoload.php');

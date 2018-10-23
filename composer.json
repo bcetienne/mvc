@@ -1,0 +1,14 @@
+{
+    "name": "app/mvc",
+    "description": "",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Helper\\": "./Helper/",
+            "Controller\\": "./Controller/",
+            "Model\\": "./Model/",
+            "View\\": "./View/",
+            "Config\\": "./Config/"
+        }
+    }
+}

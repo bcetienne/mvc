@@ -433,3 +433,4 @@ ASALocalRun/
 ./composer*
 
 # End of https://www.gitignore.io/api/phpstorm+all,visualstudio,visualstudiocode
+/vendor/
