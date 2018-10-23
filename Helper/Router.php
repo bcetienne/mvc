@@ -27,6 +27,7 @@
          * @return false|bool $return
          */
         public function redirect($url, $parameters) {
+            $controllerName = ucfirst($parameters['controller']) . 'Controller';
             // Extract and rename the route
             $routeExtraction = $this->route();
             if (!is_array($routeExtraction)) {
@@ -40,10 +41,16 @@
             // Test si la route existe
             if ($url == $route) {
                 // Test si le controleur existe
-                if (file_exists('Controller/' . ucfirst($parameters['controller']) . 'Controller.php')) {
-                    
+                if (file_exists('Controller/' . $controllerName . '.php')) {
+                    $controllerTemp = 'Controller\\' . ucfirst($parameters['controller']) . 'Controller';
+                    if (method_exists(new $controllerTemp(), $parameters['action'])) {
+                        unset($controllerTemp);
+                        
+                    } else {
+                        echo 'La méthode <b>' . $parameters['action'] . '</b> n\'existe pas, veuillez la créer dans la classe ' . $controllerName . ' puis réessayez.';
+                    }
                 } else {
-                    echo 'Le controller ' . ucfirst($parameters['controller']) . 'Controller.php n\'existe pas, créez le puis réessayez ou changer l\'url de la route';
+                    echo 'Le controller <b>' . $controllerName . '.php</b> n\'existe pas, créez le puis réessayez ou changer l\'url de la route.';
                 }
                 exit;
             }

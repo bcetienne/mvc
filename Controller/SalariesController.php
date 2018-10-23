@@ -1,12 +1,13 @@
 <?php
+  namespace Controller;
+
   /**
    * SalariesController
    */
   class SalariesController 
   {
-
     public function index() {
-      var_dump('index salaries');
+      var_dump('index salaries');die;
     }
 
     public function add() {
@@ -19,6 +20,5 @@
 
     public function remove() {
       var_dump('remove salaries');
-    }
-    
+    } 
   }
