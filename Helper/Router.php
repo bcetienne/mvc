@@ -37,7 +37,7 @@
                 $route .= '/' . $element;
               }
             }
-
+            // TODO: Faire en sorte que si l'url n'est pas renseigné alors erreur.
             // Test si la route existe
             if ($url == $route) {
                 // Test si le controleur existe
@@ -46,7 +46,7 @@
                     // Test si la méthode existe dans le controleur
                     if (method_exists(new $controllerTemp(), $parameters['action'])) {
                         unset($controllerTemp);
-                        
+                        // TODO: Faire la suite
                     } else {
                         echo 'La méthode <b>' . $parameters['action'] . '</b> n\'existe pas, veuillez la créer dans la classe ' . $controllerName . ' puis réessayez.';
                     }
