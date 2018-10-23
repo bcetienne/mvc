@@ -43,6 +43,7 @@
                 // Test si le controleur existe
                 if (file_exists('Controller/' . $controllerName . '.php')) {
                     $controllerTemp = 'Controller\\' . ucfirst($parameters['controller']) . 'Controller';
+                    // Test si la méthode existe dans le controleur
                     if (method_exists(new $controllerTemp(), $parameters['action'])) {
                         unset($controllerTemp);
                         
