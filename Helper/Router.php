@@ -1,6 +1,7 @@
 <?php
     namespace  Helper;
-    require_once ('./vendor/autoload.php');
+    use Controller as Controller;
+    use Helper as Helper;
 
     class Router
     {
@@ -15,6 +16,36 @@
         }
         
         public function route() {
-            var_dump($this->trimUri($_SERVER['REQUEST_URI']));
+            return $this->trimUri($_SERVER['REQUEST_URI']);
+        }
+
+        /**
+         * Redirect to a specific controller
+         * 
+         * @param string $url
+         * @param array $parameters
+         * @return false|bool $return
+         */
+        public function redirect($url, $parameters) {
+            // Extract and rename the route
+            $routeExtraction = $this->route();
+            if (!is_array($routeExtraction)) {
+              $route = '/' . $routeExtraction;
+            } else {
+              foreach ($routeExtraction as $element) {
+                $route .= '/' . $element;
+              }
+            }
+
+            // Test si la route existe
+            if ($url == $route) {
+                // Test si le controleur existe
+                if (file_exists('Controller/' . ucfirst($parameters['controller']) . 'Controller.php')) {
+                    
+                } else {
+                    echo 'Le controller ' . ucfirst($parameters['controller']) . 'Controller.php n\'existe pas, créez le puis réessayez ou changer l\'url de la route';
+                }
+                exit;
+            }
         }
     }
