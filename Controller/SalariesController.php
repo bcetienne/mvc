@@ -1,16 +1,17 @@
 <?php
   namespace Controller;
+  use Model\Model as BaseModel;
 
   /**
    * SalariesController
    */
-
-  namespace Controller;
-
   class SalariesController 
   {
+    // Utilisé pour le dossier Salaries dans les vues (View/Salaries/...)
+    private $BaseRoute = 'View/Salaries/';
+
     public function index() {
-      var_dump('index salaries');die;
+
     }
 
     public function add() {
