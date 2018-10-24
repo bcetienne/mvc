@@ -6,7 +6,7 @@ abstract class Model {
     function __construct()
     {
         try {
-            $this->dbConnect = new \PDO('mysql:host=localhost;dbname=mvc', 'root', '0000',[
+            $this->dbConnect = new \PDO('mysql:host=localhost;dbname=mvc', 'root', 'root',[
                 \PDO::ATTR_ERRMODE =>\PDO::ERRMODE_EXCEPTION,
                 \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC,
             ]);
