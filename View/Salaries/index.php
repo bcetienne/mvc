@@ -10,59 +10,33 @@
 <body>
 
   <h1 class="title">Liste des salariés</h1>
-  <?php
-    var_dump();die;
-  ?>
   <table class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Prénom</th>
-      <th scope="col">Nom</th>
-      <th scope="col">Email</th>
-      <th scope="col">Salaire</th>
-      <th scope="col">Modif.</th>
-      <th scope="col">Supp.</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>2000 €</td>
-      <td><button type="submit" class="btn"><i class="fas fa-edit"></i></button></td>
-      <td><button type="submit" class="btn"><i class="fas fa-trash"></i></button></td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-      <td>2000 €</td>
-      <td><button type="submit" class="btn"><i class="fas fa-edit"></i></button></td>
-      <td><button type="submit" class="btn"><i class="fas fa-trash"></i></button></td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-      <td>2000 €</td>
-      <td><button type="submit" class="btn"><i class="fas fa-edit"></i></button></td>
-      <td><button type="submit" class="btn"><i class="fas fa-trash"></i></button></td>
-    </tr>
-  </tbody>
-</table>  
-  
-  
-  
-  
-  
-  
-  
+    <thead>
+      <tr>
+        <th scope="col">Prénom</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Email</th>
+        <th scope="col">Salaire</th>
+        <th scope="col">Modif.</th>
+        <th scope="col">Supp.</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in allSalaries %}
+      <tr>
+        <td scope="row">{{ item.firstname }}</td>
+        <td>{{ item.lastname }}</td>
+        <td>{{ item.email }}</td>
+        <td>{{ item.salaire }} €</td>
+        <td><button type="submit" class="btn"><i class="fas fa-edit"></i></button></td>
+        <td><button type="submit" class="btn"><i class="fas fa-trash"></i></button></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>  
+
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </body>
 </html>
