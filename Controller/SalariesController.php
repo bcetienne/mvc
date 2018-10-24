@@ -13,19 +13,33 @@
     private $BaseRoute = 'View/Salaries/';
     private $SalariesRoute = 'Salaries/';
 
+    /**
+     * Page d'accueil des salariés
+     */
     public function index() {
       $view = new View();
       $salariesModel = new SalariesModel();
       $instanceTwig = new Twig();
+      // Retrieve all salaries
       $allSalaries = $salariesModel->getAllSalaries();
+      // TODO: Faire que les deux lignes de dessous soient automatiques (cf pour la première, la seconde var private)
       $begin = explode('Controller', substr(get_class($this), 11))[0] . '/';
       $path = $begin . __FUNCTION__ . '.php';
+      // End todo
       $instanceTwig->twig($path, ['allSalaries' => $allSalaries]);
     }
 
     public function add() {
       $view = new View();
       $salariesModel = new SalariesModel();
+      $instanceTwig = new Twig();
+
+      // Si l'utilisateur est ajouté
+      if ($_POST) {
+      } else {
+        // Sinon afficher le formulaire d'ajout
+      }
+
     }
 
     public function edit() {
