@@ -1,6 +1,9 @@
 <?php
     namespace  Helper;
 
+    /**
+     * Router
+     */
     class Router
     {
         private function trimUri($uri) {

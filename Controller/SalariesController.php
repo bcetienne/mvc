@@ -1,6 +1,7 @@
 <?php
   namespace Controller;
   use Model\SalariesModel as SalariesModel;
+  use Helper\View as View;
 
   /**
    * SalariesController
@@ -11,8 +12,10 @@
     private $BaseRoute = 'View/Salaries/';
 
     public function index() {
-      // $model = new SalariesModel();
-      // var_dump($model);die;
+      $view = new View();
+      $salariesModel = new SalariesModel();
+      $allSalaries = $salariesModel->getAllSalaries();
+      $view->renderView(['controller' => substr(get_class($this), 11), 'method' => __FUNCTION__], $allSalaries);
     }
 
     public function add() {
