@@ -15,7 +15,8 @@
       $view = new View();
       $salariesModel = new SalariesModel();
       $allSalaries = $salariesModel->getAllSalaries();
-      $view->renderView(['controller' => substr(get_class($this), 11), 'method' => __FUNCTION__], $allSalaries);
+      $test = $view->renderView(['controller' => substr(get_class($this), 11), 'method' => __FUNCTION__], $allSalaries);
+      var_dump($test);die;
     }
 
     public function add() {

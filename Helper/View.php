@@ -19,7 +19,7 @@
 
     public function renderView($controllerNameAndMethod, $modelDatas) {
       $view = $this->loadView($controllerNameAndMethod, $modelDatas);
-      echo $view;
+      return $view;
     }
 
     public function renderEditView($values)
