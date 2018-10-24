@@ -43,10 +43,13 @@
                 // Test si le controleur existe
                 if (file_exists('Controller/' . $controllerName . '.php')) {
                     $controllerTemp = 'Controller\\' . ucfirst($parameters['controller']) . 'Controller';
+                    $controllerObject = new $controllerTemp();
+                    unset($controllerTemp);
                     // Test si la méthode existe dans le controleur
-                    if (method_exists(new $controllerTemp(), $parameters['action'])) {
-                        unset($controllerTemp);
-                        // TODO: Faire la suite
+                    if (method_exists($controllerObject, $parameters['action'])) {
+                        $method = $parameters['action'];
+                        // On appelle la méthode de la classe
+                        $controllerObject->$method();
                     } else {
                         echo 'La méthode <b>' . $parameters['action'] . '</b> n\'existe pas, veuillez la créer dans la classe ' . $controllerName . ' puis réessayez.';
                     }

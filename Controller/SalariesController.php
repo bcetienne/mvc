@@ -7,11 +7,8 @@
 
   namespace Controller;
 
-  use \Model\SalariesModel;
-
   class SalariesController 
   {
-
     public function index() {
       var_dump('index salaries');die;
     }
@@ -27,7 +24,7 @@
     public function remove() {
       var_dump('remove salaries');
     }
-    
+
     static function salaries()
     {
         $salaries = new Salaries();

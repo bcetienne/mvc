@@ -9,5 +9,3 @@
   $router->redirect('/salarie/add', ['controller' => 'Salaries', 'action' => 'add']);
   $router->redirect('/salarie/edit', ['controller' => 'Salaries', 'action' => 'edit']);
   $router->redirect('/salarie/remove', ['controller' => 'Salaries', 'action' => 'remove']);
-
-  
