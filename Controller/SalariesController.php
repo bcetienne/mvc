@@ -13,7 +13,9 @@
 
     public function index() {
       $view = new View();
-      
+      $salariesModel = new SalariesModel();
+      $allSalaries = $salariesModel->getAllSalaries();
+      $view->renderView(['controller' => substr(get_class($this), 11), 'method' => __FUNCTION__], $allSalaries);
     }
 
     public function add() {

@@ -10,6 +10,9 @@
 <body>
 
   <h1 class="title">Liste des salariés</h1>
+  <?php
+    var_dump();die;
+  ?>
   <table class="table table-hover">
   <thead>
     <tr>
