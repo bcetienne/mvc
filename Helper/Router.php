@@ -1,7 +1,5 @@
 <?php
     namespace  Helper;
-    use Controller as Controller;
-    use Helper as Helper;
 
     class Router
     {

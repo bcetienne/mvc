@@ -3,7 +3,6 @@ namespace Model;
 
 abstract class Model {
     protected $dbConnect;
-
     function __construct()
     {
         try {
@@ -15,5 +14,4 @@ abstract class Model {
             throw new \PDOException($e->getMessage(), $e->getCode());
         }
     }
-
 }

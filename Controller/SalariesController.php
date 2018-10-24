@@ -1,6 +1,6 @@
 <?php
   namespace Controller;
-  use Model\Model as BaseModel;
+  use Model\SalariesModel as SalariesModel;
 
   /**
    * SalariesController
@@ -11,7 +11,8 @@
     private $BaseRoute = 'View/Salaries/';
 
     public function index() {
-
+      // $model = new SalariesModel();
+      // var_dump($model);die;
     }
 
     public function add() {
