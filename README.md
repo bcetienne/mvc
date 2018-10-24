@@ -18,3 +18,8 @@ Chaque model est utile pour récupérer les données de différentes tables de l
 
 ### Twig
 L'intégration de Twig directement dans le controller permet de trier et d'afficher directement les données récupérées du model dans la vue.
+
+### Ce qui bug
+L'envoie de l'ajout qui route mal.
+
+Des optimisations à revoir tranquillement.
