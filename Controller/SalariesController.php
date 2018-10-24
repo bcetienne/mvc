@@ -41,6 +41,5 @@
 
         $viewHTML = $salaries->getOneSalarie();
 
-
     }
   }
