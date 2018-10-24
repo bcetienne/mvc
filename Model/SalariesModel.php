@@ -12,6 +12,7 @@
       {
           parent::__construct();
       }
+
     /**
      * Retrieve one salarie
      * 
@@ -36,8 +37,14 @@
      * @return string $results
      */
     public function getAllSalaries() {
-      $results = '';
-      return $results;
+      $prepare = $this->dbConnect->prepare('SELECT * FROM ' . $this->table . ';');
+      $prepare->execute();
+      $results = $prepare->fetchAll();
+      if ($results !== null) {
+          return $results;
+      } else {
+          return false;
+      }
     }
 
     /**
