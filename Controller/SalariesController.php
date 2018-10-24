@@ -20,7 +20,14 @@
     }
 
     public function edit() {
-      var_dump('edit salaries');
+        $page = new Page();
+        $view = new View();
+        // Récupère la ligne qui porte pour titre, le nom de la fin de l'url
+        $viewHtml = $page->getOneSalarie('title', __FUNCTION__)['content'];
+        // Envoie à la vue les informations récupérées
+        $view->renderview($viewHtml, ['{{TITLE}}' => 'Contact'], true);
+//        var_dump('edit salaries');
+
     }
 
     public function remove() {
