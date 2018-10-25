@@ -6,7 +6,7 @@ abstract class Model {
     function __construct()
     {
         $user = 'root';
-        $pass = 'root';
+        $pass = '0000';
         try {
             $this->dbConnect = new \PDO('mysql:host=localhost;dbname=mvc', $user, $pass,
             [
