@@ -8,6 +8,7 @@ abstract class Model {
     protected $dbConnect;
     function __construct()
     {
+
         try {
             $this->dbConnect = new \PDO('mysql:host=' . $GLOBALS['config']['Datasources']['host'] . ';dbname=' . $GLOBALS['config']['Datasources']['database'] . '', $GLOBALS['config']['Datasources']['username'], $GLOBALS['config']['Datasources']['password'],
             [
