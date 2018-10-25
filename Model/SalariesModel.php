@@ -15,6 +15,7 @@
 
     /**
      * Retrieve one salarie
+     * NIN TRAVAILLE
      * 
      * @param string $col
      * @param string $val
