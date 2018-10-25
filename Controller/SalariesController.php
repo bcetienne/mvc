@@ -13,24 +13,45 @@
     private $BaseRoute = 'View/Salaries/';
     private $SalariesRoute = 'Salaries/';
 
+    /**
+     * Page d'accueil des salariés
+     */
     public function index() {
-      $view = new View();
       $salariesModel = new SalariesModel();
       $instanceTwig = new Twig();
+
+      // Retrieve all salaries
       $allSalaries = $salariesModel->getAllSalaries();
+      // TODO: Faire que les deux lignes de dessous soient automatiques (cf pour la première, la seconde var private)
       $begin = explode('Controller', substr(get_class($this), 11))[0] . '/';
       $path = $begin . __FUNCTION__ . '.php';
+      // End todo
       $instanceTwig->twig($path, ['allSalaries' => $allSalaries]);
     }
 
+    /**
+     * Ajout d'un salarié
+     */
     public function add() {
-      $view = new View();
-      $salariesModel = new SalariesModel();
+      $instanceTwig = new Twig();
+      var_dump($_POST);
+      // Si l'utilisateur est envoyé
+      if (isset($_POST['formFirstname']) && isset($_POST['formLastname']) && isset($_POST['formEmail']) && isset($_POST['formSalary'])) {
+        var_dump($_POST);die;
+      } else {
+        // Sinon afficher le formulaire d'ajout
+        $begin = explode('Controller', substr(get_class($this), 11))[0] . '/';
+        $path = $begin . __FUNCTION__ . '.php';
+        $instanceTwig->twig($path, []);
+      }
     }
 
+    /**
+     * Modification d'un salarié
+     */
     public function edit() {
-        $view = new View();
         $salariesModel = new SalariesModel();
+        $instanceTwig = new Twig();
         // Récupère la ligne qui porte pour titre, le nom de la fin de l'url
         $viewHtml = $page->getOneSalarie('title', __FUNCTION__)['content'];
         // Envoie à la vue les informations récupérées
@@ -39,17 +60,11 @@
 
     }
 
+    /**
+     * Suppression d'un salarié
+     */
     public function remove() {
-      $view = new View();
       $salariesModel = new SalariesModel();
-    }
-
-    static function salaries()
-    {
-        $salaries = new Salaries();
-        $view = new View();
-
-        $viewHTML = $salaries->getOneSalarie();
-
+      $instanceTwig = new Twig();
     }
   }

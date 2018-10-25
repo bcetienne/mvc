@@ -16,5 +16,10 @@ Une fois le routing réalisé, la fonction en question du controller est chargé
 ### Model
 Chaque model est utile pour récupérer les données de différentes tables de la base de données.
 
-### View
-Dans la view, les données sont triées pour en afficher correctement le contenu.
+### Twig
+L'intégration de Twig directement dans le controller permet de trier et d'afficher directement les données récupérées du model dans la vue.
+
+### Ce qui bug
+L'envoie de l'ajout qui route mal.
+
+Des optimisations à revoir tranquillement.
