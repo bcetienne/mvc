@@ -43,7 +43,7 @@
             // Test si la route existe
             if ($url == $route) {
                 // Test si le controleur existe
-                if (file_exists('Controller/' . $controllerName . '.php')) {
+                if (file_exists(FILE_CONTROLLER . $controllerName . '.php')) {
                     $controllerTemp = 'Controller\\' . ucfirst($parameters['controller']) . 'Controller';
                     $controllerObject = new $controllerTemp();
                     unset($controllerTemp);

@@ -1,5 +1,6 @@
 <?php
   require_once('./vendor/autoload.php');
-  $GLOBALS['config'] = require('./Config/app.php');
+  require_once('./Config/constants.php');
+  $GLOBALS['config'] = require('./' . FILE_CONFIG . 'app.php');
   // Call routes
-  require_once('./Config/routes.php');
+  require_once('./' . FILE_CONFIG . 'routes.php');

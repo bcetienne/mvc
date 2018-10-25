@@ -26,7 +26,8 @@
       $begin = explode('Controller', substr(get_class($this), 11))[0] . '/';
       $path = $begin . __FUNCTION__ . '.html.twig';
       // End todo
-      $instanceTwig->twig($path, ['allSalaries' => $allSalaries, 'menuName' => 'Ajouter un salarié', 'menuUrl' => '/salarie/add']);
+      // TODO: Url dynamique
+      $instanceTwig->twig($path, ['allSalaries' => $allSalaries, 'menuName' => 'Ajouter un salarié', 'menuUrl' => URL_SALARIES_ADD]);
     }
 
     /**
@@ -42,7 +43,7 @@
         // Sinon afficher le formulaire d'ajout
         $begin = explode('Controller', substr(get_class($this), 11))[0] . '/';
         $path = $begin . __FUNCTION__ . '.html.twig';
-        $instanceTwig->twig($path, ['menuName' => 'Retour à la liste', 'menuUrl' => '/']);
+        $instanceTwig->twig($path, ['menuName' => 'Retour à la liste', 'menuUrl' => URL_SALARIES_HOME]);
       }
     }
 
@@ -53,12 +54,6 @@
     public function edit() {
         $salariesModel = new SalariesModel();
         $instanceTwig = new Twig();
-        // Récupère la ligne qui porte pour titre, le nom de la fin de l'url
-        $viewHtml = $page->getOneSalarie('title', __FUNCTION__)['content'];
-        // Envoie à la vue les informations récupérées
-        $view->renderview($viewHtml, ['{{TITLE}}' => 'Contact'], true);
-//        var_dump('edit salaries');
-
     }
 
     /**
