@@ -1,6 +1,9 @@
 <?php
 namespace Model;
 
+/**
+ * Model
+ */
 abstract class Model {
     protected $dbConnect;
     function __construct()

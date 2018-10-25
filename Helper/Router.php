@@ -39,6 +39,7 @@
               }
             }
             // TODO: Faire en sorte que si l'url n'est pas renseigné alors erreur.
+            // TODO: Prendre en compte les paramètres dans les urls
             // Test si la route existe
             if ($url == $route) {
                 // Test si le controleur existe

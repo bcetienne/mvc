@@ -49,6 +49,7 @@
 
     /**
      * Return all salaries order personnaly
+     * NON TRAVAILLE - FONCTIONNE PAS
      * 
      * @param string $order
      * @return bool|array $results
@@ -63,6 +64,7 @@
     
     /**
      * Update salarie with his id
+     * NON TRAVAILLE - FONCTIONNE PAS
      * 
      * @param int $id
      * @param array $datas
@@ -78,6 +80,7 @@
 
     /**
      * Remove one salarie
+     * NON TRAVAILLE - FONCTIONNE PAS
      * 
      * @param int $id
      * @return bool|array $result

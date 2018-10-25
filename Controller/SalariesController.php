@@ -48,6 +48,7 @@
 
     /**
      * Modification d'un salarié
+     * NON TRAVAILLE - FONCTIONNE PAS
      */
     public function edit() {
         $salariesModel = new SalariesModel();
@@ -62,6 +63,7 @@
 
     /**
      * Suppression d'un salarié
+     * NON TRAVAILLE - FONCTIONNE PAS
      */
     public function remove() {
       $salariesModel = new SalariesModel();
