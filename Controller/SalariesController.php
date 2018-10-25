@@ -24,7 +24,7 @@
       $allSalaries = $salariesModel->getAllSalaries();
       // TODO: Faire que les deux lignes de dessous soient automatiques (cf pour la première, la seconde var private)
       $begin = explode('Controller', substr(get_class($this), 11))[0] . '/';
-      $path = $begin . __FUNCTION__ . '.php';
+      $path = $begin . __FUNCTION__ . '.html.twig';
       // End todo
       $instanceTwig->twig($path, ['allSalaries' => $allSalaries]);
     }
@@ -41,7 +41,7 @@
       } else {
         // Sinon afficher le formulaire d'ajout
         $begin = explode('Controller', substr(get_class($this), 11))[0] . '/';
-        $path = $begin . __FUNCTION__ . '.php';
+        $path = $begin . __FUNCTION__ . '.html.twig';
         $instanceTwig->twig($path, []);
       }
     }

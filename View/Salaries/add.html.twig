@@ -1,0 +1,33 @@
+{% include 'Elements/header.html.twig' %}
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">Salariés</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Retour à la liste</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1 class="title">Ajouter un salarié</h1>
+    <form method="POST" action="/salarie/add">
+      <div class="form-group">
+        <label for="formFirstname">Prénom</label>
+        <input type="text" class="form-control" id="formFirstname" placeholder="Prénom">
+        <label for="formLastname">Nom</label>
+        <input type="text" class="form-control" id="formLastname" placeholder="Nom">
+        <label for="formEmail">Adresse email</label>
+        <input type="email" class="form-control" id="formEmail" placeholder="adresse@mail.com">
+        <label for="formSalary">Salaire mensuel</label>
+        <input type="number" class="form-control" id="formSalary" placeholder="1000">
+      </div>
+      <button type="submit" class="btn btn-primary mb-2">Ajouter un salarié</button>
+    </form>
+  </div>
+  
+{% include 'Elements/footer.html.twig' %}

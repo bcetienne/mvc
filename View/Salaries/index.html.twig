@@ -1,0 +1,44 @@
+{% include 'Elements/header.html.twig' %}
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">Salariés</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/salarie/add">Ajouter un salarié</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1 class="title">Liste des salariés</h1>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Prénom</th>
+          <th scope="col">Nom</th>
+          <th scope="col">Email</th>
+          <th scope="col">Salaire</th>
+          <th scope="col">Modif.</th>
+          <th scope="col">Supp.</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in allSalaries %}
+        <tr>
+          <td scope="row">{{ item.firstname }}</td>
+          <td>{{ item.lastname }}</td>
+          <td>{{ item.email }}</td>
+          <td>{{ item.salaire }} €</td>
+          <td><button type="submit" class="btn"><i class="fas fa-edit"></i></button></td>
+          <td><button type="submit" class="btn"><i class="fas fa-trash"></i></button></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% include 'Elements/footer.html.twig' %}
