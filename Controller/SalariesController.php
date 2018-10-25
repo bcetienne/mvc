@@ -26,7 +26,7 @@
       $begin = explode('Controller', substr(get_class($this), 11))[0] . '/';
       $path = $begin . __FUNCTION__ . '.html.twig';
       // End todo
-      $instanceTwig->twig($path, ['allSalaries' => $allSalaries]);
+      $instanceTwig->twig($path, ['allSalaries' => $allSalaries, 'menuName' => 'Ajouter un salarié', 'menuUrl' => '/salarie/add']);
     }
 
     /**
@@ -42,7 +42,7 @@
         // Sinon afficher le formulaire d'ajout
         $begin = explode('Controller', substr(get_class($this), 11))[0] . '/';
         $path = $begin . __FUNCTION__ . '.html.twig';
-        $instanceTwig->twig($path, []);
+        $instanceTwig->twig($path, ['menuName' => 'Retour à la liste', 'menuUrl' => '/']);
       }
     }
 
