@@ -19,6 +19,9 @@ Chaque model est utile pour récupérer les données de différentes tables de l
 ### Twig
 L'intégration de Twig directement dans le controller permet de trier et d'afficher directement les données récupérées du model dans la vue.
 
+### Helper
+Au niveau des helpers, le View n'est plus utilisé pour le moment suite à l'utilisation de Twig.
+
 ### Ce qui bug
 L'envoie de l'ajout qui route mal.
 
