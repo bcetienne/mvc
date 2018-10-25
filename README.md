@@ -22,4 +22,6 @@ L'intégration de Twig directement dans le controller permet de trier et d'affic
 ### Ce qui bug
 L'envoie de l'ajout qui route mal.
 
+Le templating fonctionne pas non plus. Pas dans les prios.
+
 Des optimisations à revoir tranquillement.
