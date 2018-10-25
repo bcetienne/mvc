@@ -49,19 +49,13 @@
     }
 
     public function addSalarie($values) {
-        $query = 'INSERT INTO '.$this->table.' VALUES (:firstname, :lastname, :email, :salary)';
-        $prepare = $this->dbConnect->prepare($query);
-        $results = $prepare->execute(array(
-                    'firstname'=> $values['formFirstname'],
-                    'lastname'=> $values['formLastname'],
-                    'email'=> $values['formEmail'],
-                    'salary'=> $values['formSalary']
-        ));
-        if ($results !== null) {
-            return $results;
-        } else {
-            return false;
-        }
+        $request = $this->dbConnect->prepare('INSERT INTO ' . $this->table . '(firstname, lastname, email, salaire) VALUES (?, ?, ?, ?);');
+        $request->execute([
+            $values['formFirstname'],
+            $values['formLastname'],
+            $values['formEmail'],
+            intval($values['formSalary'])
+        ]);
     }
 
     /**
