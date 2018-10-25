@@ -5,10 +5,8 @@ abstract class Model {
     protected $dbConnect;
     function __construct()
     {
-        $user = 'root';
-        $pass = 'root';
         try {
-            $this->dbConnect = new \PDO('mysql:host=localhost;dbname=mvc', $user, $pass,
+            $this->dbConnect = new \PDO('mysql:host=' . $GLOBALS['config']['Datasources']['host'] . ';dbname=' . $GLOBALS['config']['Datasources']['database'] . '', $GLOBALS['config']['Datasources']['username'], $GLOBALS['config']['Datasources']['password'],
             [
                 \PDO::ATTR_ERRMODE =>\PDO::ERRMODE_EXCEPTION,
                 \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC,
