@@ -436,4 +436,8 @@ ASALocalRun/
 # Config file
 Config/app.php
 
-# End of https://www.gitignore.io/api/phpstorm+all,visualstudio,visualstudiocode
+review/
+
+.DS_STORE
+
+# End of https://www.gitignore.io/api/phpstorm+all,visualstudio
