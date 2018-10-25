@@ -34,16 +34,17 @@
      * Ajout d'un salarié
      */
     public function add() {
-      $instanceTwig = new Twig();
-      var_dump($_POST);
+        $salariesModel = new SalariesModel();
+        $instanceTwig = new Twig();
       // Si l'utilisateur est envoyé
       if (isset($_POST['formFirstname']) && isset($_POST['formLastname']) && isset($_POST['formEmail']) && isset($_POST['formSalary'])) {
-        var_dump($_POST);die;
+        $salariesModel->addSalarie($_POST);
+        header('Location: /');
       } else {
         // Sinon afficher le formulaire d'ajout
         $begin = explode('Controller', substr(get_class($this), 11))[0] . '/';
         $path = $begin . __FUNCTION__ . '.html.twig';
-        $instanceTwig->twig($path, ['menuName' => 'Retour à la liste', 'menuUrl' => URL_SALARIES_HOME]);
+        $instanceTwig->twig($path, ['menuName' => 'Retour à la liste', 'menuUrl' => URL_SALARIES_HOME, 'POST' => $_POST]);
       }
     }
 
